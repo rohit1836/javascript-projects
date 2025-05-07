@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming</title>
+</head>
+<body>
+    <h1>Asynchronous Programming</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+    <script>
+
+
+        let interval;
+
+        const printSomething = function() {
+            console.log("hello" + Date.now())
+        }
+
+        const startPrinting = ()=> {
+            interval = setInterval(printSomething, 500)
+        }
+
+        const stopPrinting = ()=> {
+            clearInterval(interval)
+        }
+
+        document.querySelector("#start").addEventListener("click", startPrinting)
+        document.querySelector("#stop").addEventListener("click", stopPrinting)
+        
+
+    </script>
+</body>
+</html>

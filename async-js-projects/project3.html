@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #table-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table {
+            padding: 3px;
+        } 
+        table > td,th {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Press key and watch magic</h1>
+    <div id="table-container"> 
+        <table border="2px">
+            <tr>
+                <th>Key</th>
+                <th>Keycode</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td class="item" id="item1"></td>
+                <td class="item" id="item2"></td>
+                <td class="item" id="item3"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const x = document.getElementById("item1")
+        const y = document.getElementById("item2")
+        const z = document.getElementById("item3")
+
+        window.addEventListener("keydown", (e) => {
+            x.textContent = (e.key === " ") ? "Space" : e.key;
+            y.textContent = e.keyCode;
+            z.textContent = e.code;
+        })
+    </script>
+</body>
+</html>

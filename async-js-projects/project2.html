@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+</head>
+<body>
+    <h1>Change colour</h1>
+    <br>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let interval;
+
+        function generateColour(){
+            let hex = "0123456789ABCDEF";
+            let colour = "#";
+            for(let i=0; i<6; i++){
+                colour += hex[Math.floor(Math.random() * 16)];
+            }
+            return colour;
+        }
+
+        function changeColour(){
+                document.body.style.backgroundColor = generateColour();
+        }
+
+        const startChangeColour = function(){
+            if(!interval)
+                interval = setInterval(changeColour, 750);
+        }
+
+        const stopChangeColour = function () {
+            clearInterval(interval)
+            interval = null
+        }
+
+        document.querySelector("#start").addEventListener("click", startChangeColour)
+        document.querySelector("#stop").addEventListener("click", stopChangeColour)
+
+    </script>
+</body>
+</html>
